@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,5 +27,12 @@ public class StreamApis {
         return list.stream()
                 .distinct()
                 .collect(Collectors.toList());
+    }
+
+    public static List<Employee> sortEmployee(List<Employee> employee){
+        return employee.stream()
+                .sorted(Comparator.comparing(Employee::getSalary))
+                .collect(Collectors.toList());
+
     }
 }
